@@ -13,7 +13,7 @@ const AddTodoForm = ({ onAddTodo }) => {
     //let todoTitle = event.target.value
     //console.log(todoTitle)
 
-    onAddTodo({ fields: {Title:todoTitle} })
+    onAddTodo({ fields: { Title: todoTitle } })
     setTodoTitle('')
     //event.target.reset()    
   }
