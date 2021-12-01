@@ -1,0 +1,47 @@
+.unorderedTodoList{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  justify-content: center; 
+  margin-left: auto;
+  margin-right: auto;
+    /*background-color: white;*/
+  list-style: none;
+  align-items: center;
+}
+.ListItem{
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+  color:rgb(2, 2, 31);
+  list-style-type: none; 
+  margin: 20px 20px;
+  margin-bottom:-2px;  
+  
+}
+.removeButton {  
+  background: rgb(244, 244, 247); 
+  border: 1px solid #171212; padding: 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 5px;      
+}
+/*.checkBox{
+  transform: scale(1.4);
+ 
+  
+}*/
+.checkbox1{
+  width:18px;
+  height:18px;  
+}
+@media screen  and (max-width: 800px){
+  .unorderedTodoList{
+    display: block;
+  }
+  .ListItem{
+    width:200px;
+    margin-left: 30px;
+  } 
+}
+
