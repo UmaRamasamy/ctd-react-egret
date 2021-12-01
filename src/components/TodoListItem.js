@@ -1,13 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react';
+import style from '../TodoListItem.module.css';
+import { AiFillDelete } from "react-icons/ai";
+//import Checkbox from '@material-ui/core/Checkbox';
+
 
 const TodoListItem = ({ todo, onRemoveTodo }) => {
-  console.log({ todo })
+  const [checked, setChecked] = useState({ labelChecked: false });
+  const labelRef = React.createRef();
+
+  const handleClick = e => {
+    if (checked.labelChecked === false) {
+      labelRef.current.style.textDecoration = "line-through";
+    } else {
+      labelRef.current.style.textDecoration = "none";
+    }
+    setChecked({ labelChecked: !checked.labelChecked });
+  };
+
   return (
-    <div>
-      <li> {todo.fields.Title} <button type="button" onClick={() => onRemoveTodo(todo.id)}><span>&nbsp;</span>Remove </button>
+    <div >
+      <li className={style.ListItem}>
+        {/*<input type="checkbox" checked={checked} onChange={onHandleChecked}className={style.checkbox1}  />*/}
+
+        <label ref={labelRef} htmlFor="strikethrough">
+          <input type="checkbox" id="strikethrough" name="strikethrough" onClick={handleClick} className={style.checkbox1} />
+          &nbsp;&nbsp;
+          {todo.fields.Title}
+        </label>
+        <button className={style.removeButton} type="button" onClick={() => onRemoveTodo(todo.id)}>
+          <AiFillDelete size={20} style={{ fill: 'brown' }} />
+        </button>
       </li>
     </div>
   )
-
-}
-export default TodoListItem
+};
+export default TodoListItem;

@@ -1,4 +1,5 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect } from 'react';
+import style from '../AddTodoForm.module.css';
 
 function InputWithLabel(props) {
   const inputRef = useRef();
@@ -7,10 +8,12 @@ function InputWithLabel(props) {
   })
   return (
     <>
-      <label htmlFor="todoTitle">{props.children} </label>
-      <input value={props.todoTitle} onChange={props.handleTitleChange} name="title" type="text" id="todoTitle" ref={inputRef}></input>
+      <label className={StyleSheet.formLabel} htmlFor="todoTitle">
+        {props.children}
+      </label>
+      <input className={style.inputfiled} value={props.todoTitle} onChange={props.handleTitleChange} name="title" type="text" id="todoTitle" ref={inputRef}>
+      </input>
     </>
   )
 }
-
-export default InputWithLabel
+export default InputWithLabel;
