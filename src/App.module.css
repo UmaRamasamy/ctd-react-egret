@@ -42,6 +42,7 @@
 }
 
 @media screen  and (max-width:800px){
+  
   .headlinePrimary{
     text-align: left; 
   }
@@ -56,6 +57,7 @@
   }
 }
 @media screen  and (max-width: 400px){
+  
   .headlinePrimary{
     width:400px;
     margin-top:10px;

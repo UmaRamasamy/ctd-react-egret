@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import style from '../TodoListItem.module.css';
+import style from './TodoListItem.module.css';
 import { AiFillDelete } from "react-icons/ai";
 //import Checkbox from '@material-ui/core/Checkbox';
+import PropTypes from 'prop-types';
 
 
 const TodoListItem = ({ todo, onRemoveTodo }) => {
@@ -16,7 +17,11 @@ const TodoListItem = ({ todo, onRemoveTodo }) => {
     }
     setChecked({ labelChecked: !checked.labelChecked });
   };
+ TodoListItem.propTypes = {
+   todo: PropTypes.object,
+   onRemoveTodo: PropTypes.func
 
+ }
   return (
     <div >
       <li className={style.ListItem}>

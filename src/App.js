@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import style from './App.module.css';
-import TodoContainer from './TodoContainer';
+import TodoContainer from './components/TodoContainer';
 import { MdAssignment, MdAddShoppingCart } from "react-icons/md";
 
 function App() {
