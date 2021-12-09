@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import TodoList from './components/TodoList'
-import AddTodoForm from './components/AddTodoForm';
+import TodoList from './TodoList'
+import AddTodoForm from './AddTodoForm';
+import PropTypes from 'prop-types';
 
 
 function TodoContainer({ tableName }) {
@@ -61,7 +62,10 @@ function TodoContainer({ tableName }) {
         setTodoList(todoList.filter((item) => item.id !== id))
       })
   };
-
+  TodoContainer.propTypes = {
+    tableName: PropTypes.string
+  }
+ 
   return (
     <>
       <h1 >{tableName}</h1>

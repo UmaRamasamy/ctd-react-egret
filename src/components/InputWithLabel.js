@@ -1,11 +1,21 @@
+import { any } from 'prop-types';
 import React, { useRef, useEffect } from 'react';
-import style from '../AddTodoForm.module.css';
+import style from './AddTodoForm.module.css';
+import PropTypes from 'prop-types';
+
 
 function InputWithLabel(props) {
   const inputRef = useRef();
   useEffect(() => {
     if (inputRef.current) { inputRef.current.focus() }
   })
+
+  InputWithLabel.propTypes = {
+    children: PropTypes.string,
+    todoTitle: PropTypes.string,
+    handleTitleChange: PropTypes.func
+  }
+  
   return (
     <>
       <label className={StyleSheet.formLabel} htmlFor="todoTitle">
@@ -15,5 +25,6 @@ function InputWithLabel(props) {
       </input>
     </>
   )
+  
 }
 export default InputWithLabel;

@@ -1,8 +1,9 @@
 
 import React, { useState } from 'react';
 import InputWithLabel from './InputWithLabel';
-import style from '../AddTodoForm.module.css';
+import style from './AddTodoForm.module.css';
 import { SiAddthis } from "react-icons/si";
+import PropTypes from 'prop-types';
 
 
 const AddTodoForm = ({ onAddTodo }) => {
@@ -20,6 +21,10 @@ const AddTodoForm = ({ onAddTodo }) => {
     setTodoTitle('');
     //event.target.reset()    
   }
+  AddTodoForm.propTypes = {
+    onAddTodo: PropTypes.func
+  }
+  
   return (
     <>
       <div>
@@ -36,5 +41,6 @@ const AddTodoForm = ({ onAddTodo }) => {
       </div>
     </>
   )
+  
 };
 export default AddTodoForm;
