@@ -6,7 +6,7 @@ import { MdAssignment, MdAddShoppingCart } from "react-icons/md";
 
 function App() {
   return (
-    <div className={style.container}>
+    
       <BrowserRouter>
         <nav >
           <ul className={style.navBar}>
@@ -36,7 +36,7 @@ function App() {
           </Switch>
         </div>
       </BrowserRouter>
-    </div>
+  
   );
 }
 export default App;
